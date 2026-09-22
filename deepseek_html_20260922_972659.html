@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Лаунчер — охуенный</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #0a0a0f;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+.bg {
+  position: fixed; inset:0; z-index:-1;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(80,200,80,0.15), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(60,120,255,0.15), transparent 40%),
+    #0a0a0f;
+}
+header {
+  padding: 80px 20px 60px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+h1 {
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 800;
+  background: linear-gradient(135deg, #5fff8f, #4fa3ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+.sub {
+  font-size: 18px;
+  color: #888;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  background: linear-gradient(135deg, #3ecf6b, #3a8bd6);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 10px 30px rgba(62,207,107,0.3);
+  transition: 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(62,207,107,0.5); }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+h2::before { content:'// '; color:#3ecf6b; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 30px;
+  transition: 0.25s;
+}
+.card:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(62,207,107,0.4);
+  transform: translateY(-4px);
+}
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #5fff8f;
+}
+.card p { color: #999; font-size: 15px; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+.stat {
+  padding: 30px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.stat .num {
+  font-size: 42px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #5fff8f, #4fa3ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.stat .lbl { color: #777; font-size: 14px; margin-top: 8px; }
+
+footer {
+  padding: 40px 20px;
+  text-align: center;
+  color: #555;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  font-size: 14px;
+}
+
+code {
+  background: rgba(62,207,107,0.1);
+  color: #5fff8f;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Consolas', monospace;
+  font-size: 14px;
+}
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<header>
+  <h1>Лаунчер, который не хуйня</h1>
+  <p class="sub">Твой майнкрафт запустится быстрее, чем ты успеешь сказать «блядь».</p>
+  <a href="#download" class="btn">СКАЧАТЬ БЕСПЛАТНО</a>
+</header>
+
+<div class="container">
+  <h2>Почему он охуенный</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>🚀 Быстрый запуск</h3>
+      <p>От клика до главного меню — меньше 3 секунд. Если у тебя не калькулятор.</p>
+    </div>
+    <div class="card">
+      <h3>📦 Все версии</h3>
+      <p>От альфы до последнего снапшота. Forge, Fabric, OptiFine — всё в комплекте.</p>
+    </div>
+    <div class="card">
+      <h3>🎨 Скины и плащи</h3>
+      <p>Загружай свои, ставь чужие. Никаких ограничений, кроме твоей фантазии.</p>
+    </div>
+    <div class="card">
+      <h3>🔧 Моды в один клик</h3>
+      <p>Ищешь моды? Ищи. Ставятся сами. Никаких папок и распаковок.</p>
+    </div>
+    <div class="card">
+      <h3>💾 Мало места</h3>
+      <p>Жрёт в 2 раза меньше диска, чем официальный. Проверено на кошках.</p>
+    </div>
+    <div class="card">
+      <h3>🛡 Без вирусов</h3>
+      <p>Открытый исходник, никакой телеметрии, никаких «бонусов» в комплекте.</p>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="num">50K+</div>
+      <div class="lbl">скачиваний</div>
+    </div>
+    <div class="stat">
+      <div class="num">4.9★</div>
+      <div class="lbl">средняя оценка</div>
+    </div>
+    <div class="stat">
+      <div class="num">0₽</div>
+      <div class="lbl">стоимость</div>
+    </div>
+    <div class="stat">
+      <div class="num">24/7</div>
+      <div class="lbl">поддержка в дискорде</div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="download">
+  <h2>Как поставить</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>1. Скачай</h3>
+      <p>Жми кнопку выше или качай с <code>github.com/ты/лаунчер</code></p>
+    </div>
+    <div class="card">
+      <h3>2. Запусти</h3>
+      <p>Двойной клик. Если винда орёт про смартскрин — разреши, это не вирус.</p>
+    </div>
+    <div class="card">
+      <h3>3. Играй</h3>
+      <p>Вводи ник, выбирай версию, жми «Играть». Всё. Ты в майне.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Сделано с матом и любовью. © 2026. Не является официальным продуктом Mojang.
+</footer>
+
+</body>
+</html>
